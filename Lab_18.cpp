@@ -45,10 +45,6 @@ void addToBack (ReviewNode*& head, ReviewNode*& tail, double rating, string comm
     }
 };
 
-
-
-
-
 void DisplayList (ReviewNode* head) {
     if (head == nullptr) {
         cout << "Somin ain't right\n";
@@ -85,7 +81,6 @@ int main() {
     double rating;
     string comment;
 
-
     string continueChoiceInput = "y";
 
     while (continueChoiceInput == "y" || continueChoiceInput == "Y") {
@@ -118,9 +113,3 @@ int main() {
     }
 
 }
-
-
-
-
-
-
