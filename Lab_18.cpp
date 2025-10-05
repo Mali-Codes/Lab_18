@@ -46,23 +46,19 @@ void addToBack (ReviewNode*& head, ReviewNode*& tail, double rating, string comm
 };
 
 
-// void display {.  temp
-//     if (head == nullptr) {
-//                 cout << "Somin ain't right\n";
-//                 return;
-//             }
 
-//             int count = 0;
-//             ReviewNode* current = head;
 
-//             if (current != nullptr) {
-//                 count++;
-            
-//                 cout << "   > Review #" << count << ": " << current->rating 
-//                     << ": " << current->comment << endl;
-                
-//             }
-// }
+
+//To Do
+    // comment function
+    // add average part to dispaly?
+
+
+
+
+// back
+
+
 
 void DisplayList (ReviewNode* head) {
     if (head == nullptr) {
