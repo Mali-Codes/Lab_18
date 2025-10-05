@@ -14,25 +14,34 @@ struct ReviewNode {
 
 void AddToFront (ReviewNode*& head, ReviewNode*& tail, double rating, string comment) {
 
-    ReviewNode* newnode = new ReviewNode*;
+    ReviewNode* newNode = new ReviewNode;
 
     newNode->rating = rating;
     newNode->comment = comment;
-    newNode->head = head;
+    newNode->next = head;
+    
+    head = newNode;
 
+    if (tail == nullptr) {
+        tail = newNode;
+    }
 };
 
 
 int main() {
 
-//Make the list
+    //Make the list
+    ReviewNode* head = nullptr;
+    ReviewNode* tail = nullptr;
 
+    // User choice
+    int choice;
+    cout << "[1] add to the front\n";
+    cout << "[2] add to the back\n";
+    cout << "Which one?: ";
+    cin >> choice;
 
-// User choice
-int choice;
-cout << "[1] add to the front\n";
-cout << "[2] add to the back\n";
-cout << "Which one?: ";
-cin >> choice;
-
+    if (choice == 1) {
+        AddToFront(head, tail, rating, comment)
+    }
 }
