@@ -27,6 +27,26 @@ void AddToFront (ReviewNode*& head, ReviewNode*& tail, double rating, string com
     }
 };
 
+void addToBack (ReviewNode*& head, ReviewNode*& tail, double rating, string comment) {
+
+    ReviewNode* newNode = new ReviewNode;
+
+    newNode->rating = rating;
+    newNode->comment = comment;
+    newNode->next = nullptr;            // big difference
+
+    if (tail != nullptr) {
+        tail->next = newNode;
+    }
+    tail = newNode;
+
+    if (head == nullptr) {
+        head = newNode;
+    }
+};
+
+
+
 void DisplayList (ReviewNode* head) {
     if (head == nullptr) {
         cout << "Somin ain't right\n";
@@ -44,6 +64,9 @@ void DisplayList (ReviewNode* head) {
         
     }
 }
+
+
+
 
 
 int main() {
@@ -69,6 +92,12 @@ int main() {
     if (choice == 1) {
         AddToFront(head, tail, rating, comment);
     }
+    else if (choice == 2) {
+        addToBack(head, tail, rating, comment);
+    }
 
     DisplayList(head);
 }
+
+
+
