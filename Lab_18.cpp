@@ -46,58 +46,43 @@ void addToBack (ReviewNode*& head, ReviewNode*& tail, double rating, string comm
 };
 
 
+// void display {.  temp
+//     if (head == nullptr) {
+//                 cout << "Somin ain't right\n";
+//                 return;
+//             }
+
+//             int count = 0;
+//             ReviewNode* current = head;
+
+//             if (current != nullptr) {
+//                 count++;
+            
+//                 cout << "   > Review #" << count << ": " << current->rating 
+//                     << ": " << current->comment << endl;
+                
+//             }
+// }
+
 void DisplayList (ReviewNode* head) {
+    if (head == nullptr) {
+        cout << "Somin ain't right\n";
+        return;
+    }
+
+    int count = 0;
+    ReviewNode* current = head;
+
+    while (current != nullptr) {
+        count++;
+    
+        cout << "   > Review #" << count << ": " << current->rating 
+            << ": " << current->comment << endl;
+        
+    }
 
     string continueChoiceInput = "y";
-    
-        while (continueChoiceInput == "y" || continueChoiceInput == "Y") {
-            
-        if (head == nullptr) {
-            cout << "Somin ain't right\n";
-            return;
-        }
-
-        int count = 0;
-        ReviewNode* current = head;
-
-        if (current != nullptr) {
-            count++;
-        
-            cout << "   > Review #" << count << ": " << current->rating 
-                << ": " << current->comment << endl;
-            
-        }
-
-        string continueChoiceInput = "y";
-
-        cout << "Want to add anoter review? (y/n): ";
-        cin >> continueChoiceInput;
-    }
 }
-
-
-// void DisplayList (ReviewNode* head) {
-//     if (head == nullptr) {
-//         cout << "Somin ain't right\n";
-//         return;
-//     }
-
-//     int count = 0;
-//     ReviewNode* current = head;
-
-//     if (current != nullptr) {
-//         count++;
-    
-//         cout << "   > Review #" << count << ": " << current->rating 
-//             << ": " << current->comment << endl;
-        
-//     }
-
-//     string continueChoiceInput = "y";
-
-//     cout << "Want to add anoter review? (y/n): ";
-//     cin >> continueChoiceInput;
-// }
 
 
 
@@ -119,20 +104,26 @@ int main() {
     cout << "Which one?: ";
     cin >> choice;
 
+    string continueChoiceInput = "y";
 
-    cout << "Enter rating (1 -5): ";
-    cin >> rating;
-    cin.ignore();
+    while (continueChoiceInput == "y" || continueChoiceInput == "Y") {
+        cout << "Enter rating (1 - 5): ";
+        cin >> rating;
+        cin.ignore();
 
-    if (choice == 1) {                  ///////////Change from an if
-        AddToFront(head, tail, rating, comment);
-    }
-    else if (choice == 2) {
-        addToBack(head, tail, rating, comment);
-    }
+        if (choice == 1) {                  ///////////Change from an if
+            AddToFront(head, tail, rating, comment);
+        }
+        else if (choice == 2) {
+            addToBack(head, tail, rating, comment);
+        }
+        
+        cout << "Want to add another review? (y/n): ";
+        cin >> continueChoiceInput;
+        cin.ignore();
 
     DisplayList(head);
-
+    }
 
 }
 
