@@ -46,6 +46,35 @@ void addToBack (ReviewNode*& head, ReviewNode*& tail, double rating, string comm
 };
 
 
+void DisplayList (ReviewNode* head) {
+
+    string continueChoiceInput = "y";
+    
+        while (continueChoiceInput == "y" || continueChoiceInput == "Y") {
+            
+        if (head == nullptr) {
+            cout << "Somin ain't right\n";
+            return;
+        }
+
+        int count = 0;
+        ReviewNode* current = head;
+
+        if (current != nullptr) {
+            count++;
+        
+            cout << "   > Review #" << count << ": " << current->rating 
+                << ": " << current->comment << endl;
+            
+        }
+
+        string continueChoiceInput = "y";
+
+        cout << "Want to add anoter review? (y/n): ";
+        cin >> continueChoiceInput;
+    }
+}
+
 
 // void DisplayList (ReviewNode* head) {
 //     if (head == nullptr) {
@@ -112,27 +141,3 @@ int main() {
 
 
 
-void DisplayList (ReviewNode* head) {
-    while (continueChoiceInput == "y" || continueChoiceInput == "Y") {
-        
-//     if (head == nullptr) {
-//         cout << "Somin ain't right\n";
-//         return;
-//     }
-
-//     int count = 0;
-//     ReviewNode* current = head;
-
-//     if (current != nullptr) {
-//         count++;
-    
-//         cout << "   > Review #" << count << ": " << current->rating 
-//             << ": " << current->comment << endl;
-        
-//     }
-
-//     string continueChoiceInput = "y";
-
-//     cout << "Want to add anoter review? (y/n): ";
-//     cin >> continueChoiceInput;
-// }
