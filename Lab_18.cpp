@@ -49,17 +49,6 @@ void addToBack (ReviewNode*& head, ReviewNode*& tail, double rating, string comm
 
 
 
-//To Do
-    // comment function
-    // add average part to dispaly?
-
-
-
-
-// back
-
-
-
 void DisplayList (ReviewNode* head) {
     if (head == nullptr) {
         cout << "Somin ain't right\n";
@@ -67,10 +56,12 @@ void DisplayList (ReviewNode* head) {
     }
 
     int count = 0;
+    double sum = 0.0;
     ReviewNode* current = head;
 
     while (current != nullptr) {
         count++;
+        sum += current->rating;
     
         cout << "   > Review #" << count << ": " << current->rating 
             << ": " << current->comment << endl;
@@ -79,8 +70,34 @@ void DisplayList (ReviewNode* head) {
         
     }
 
-    string continueChoiceInput = "y";
+    double average = sum / count;
+    cout << "Average: " << average << "\n";
 }
+
+
+
+
+// void DisplayList (ReviewNode* head) {            ////real deal
+//     if (head == nullptr) {
+//         cout << "Somin ain't right\n";
+//         return;
+//     }
+
+//     int count = 0;
+//     ReviewNode* current = head;
+
+//     while (current != nullptr) {
+//         count++;
+    
+//         cout << "   > Review #" << count << ": " << current->rating 
+//             << ": " << current->comment << endl;
+
+//         current = current->next;
+        
+//     }
+
+//     string continueChoiceInput = "y";
+// }
 
 
 
