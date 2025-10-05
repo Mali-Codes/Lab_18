@@ -9,19 +9,30 @@ using namespace std;
 struct ReviewNode {
     double rating;
     string comment;
-    reviewNode* next;
+    ReviewNode* next;
 };
 
+void AddToFront (ReviewNode*& head, ReviewNode*& tail, double rating, string comment) {
 
+    ReviewNode* newnode = new ReviewNode*;
+
+    newNode->rating = rating;
+    newNode->comment = comment;
+    newNode->head = head;
+
+};
 
 
 int main() {
 
 //Make the list
 
-cout << "[1] add to the front";
-cout << "[2] add to the back";
 
-
+// User choice
+int choice;
+cout << "[1] add to the front\n";
+cout << "[2] add to the back\n";
+cout << "Which one?: ";
+cin >> choice;
 
 }
