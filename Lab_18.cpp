@@ -74,35 +74,6 @@ void DisplayList (ReviewNode* head) {
     cout << "Average: " << average << "\n";
 }
 
-
-
-
-// void DisplayList (ReviewNode* head) {            ////real deal
-//     if (head == nullptr) {
-//         cout << "Somin ain't right\n";
-//         return;
-//     }
-
-//     int count = 0;
-//     ReviewNode* current = head;
-
-//     while (current != nullptr) {
-//         count++;
-    
-//         cout << "   > Review #" << count << ": " << current->rating 
-//             << ": " << current->comment << endl;
-
-//         current = current->next;
-        
-//     }
-
-//     string continueChoiceInput = "y";
-// }
-
-
-
-
-
 int main() {
 
     //Make the list
@@ -127,6 +98,9 @@ int main() {
         cout << "Enter rating (1 - 5): ";
         cin >> rating;
         cin.ignore();
+
+        cout << "Enter comment: ";
+        getline(cin, comment);
 
         if (choice == 1) {                  /////////// Change from an if
             AddToFront(head, tail, rating, comment);
