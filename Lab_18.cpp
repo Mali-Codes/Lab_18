@@ -47,23 +47,28 @@ void addToBack (ReviewNode*& head, ReviewNode*& tail, double rating, string comm
 
 
 
-void DisplayList (ReviewNode* head) {
-    if (head == nullptr) {
-        cout << "Somin ain't right\n";
-        return;
-    }
+// void DisplayList (ReviewNode* head) {
+//     if (head == nullptr) {
+//         cout << "Somin ain't right\n";
+//         return;
+//     }
 
-    int count = 0;
-    ReviewNode* current = head;
+//     int count = 0;
+//     ReviewNode* current = head;
 
-    if (current != nullptr) {
-        count++;
+//     if (current != nullptr) {
+//         count++;
     
-        cout << "   > Review #" << count << ": " << current->rating 
-            << ": " << current->comment << endl;
+//         cout << "   > Review #" << count << ": " << current->rating 
+//             << ": " << current->comment << endl;
         
-    }
-}
+//     }
+
+//     string continueChoiceInput = "y";
+
+//     cout << "Want to add anoter review? (y/n): ";
+//     cin >> continueChoiceInput;
+// }
 
 
 
@@ -85,11 +90,12 @@ int main() {
     cout << "Which one?: ";
     cin >> choice;
 
-     cout << "Enter rating (1 -5): ";
+
+    cout << "Enter rating (1 -5): ";
     cin >> rating;
     cin.ignore();
 
-    if (choice == 1) {
+    if (choice == 1) {                  ///////////Change from an if
         AddToFront(head, tail, rating, comment);
     }
     else if (choice == 2) {
@@ -97,7 +103,36 @@ int main() {
     }
 
     DisplayList(head);
+
+
 }
 
 
 
+
+
+
+void DisplayList (ReviewNode* head) {
+    while (continueChoiceInput == "y" || continueChoiceInput == "Y") {
+        
+//     if (head == nullptr) {
+//         cout << "Somin ain't right\n";
+//         return;
+//     }
+
+//     int count = 0;
+//     ReviewNode* current = head;
+
+//     if (current != nullptr) {
+//         count++;
+    
+//         cout << "   > Review #" << count << ": " << current->rating 
+//             << ": " << current->comment << endl;
+        
+//     }
+
+//     string continueChoiceInput = "y";
+
+//     cout << "Want to add anoter review? (y/n): ";
+//     cin >> continueChoiceInput;
+// }
