@@ -41,7 +41,13 @@ int main() {
     cout << "Which one?: ";
     cin >> choice;
 
+    double rating;
+    string comment;
     if (choice == 1) {
         AddToFront(head, tail, rating, comment)
+
+    cout << "Enter rating (1 -5): ";
+    cin >> rating:
+    cin.ignore();
     }
 }
