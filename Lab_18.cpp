@@ -36,8 +36,12 @@ void DisplayList (ReviewNode* head) {
     int count = 0;
     ReviewNode* current = head;
 
-    while (current != nullptr) {
-        count++
+    if (current != nullptr) {
+        count++;
+    
+        cout << "   > Review #" << count << ": " << current->rating 
+            << ": " << current->comment << endl;
+        
     }
 }
 
@@ -65,4 +69,6 @@ int main() {
     if (choice == 1) {
         AddToFront(head, tail, rating, comment);
     }
+
+    DisplayList(head);
 }
