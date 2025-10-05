@@ -78,6 +78,8 @@ void DisplayList (ReviewNode* head) {
     
         cout << "   > Review #" << count << ": " << current->rating 
             << ": " << current->comment << endl;
+
+        current = current->next;
         
     }
 
@@ -99,19 +101,21 @@ int main() {
     double rating;
     string comment;
 
-    cout << "[1] add to the front\n";
-    cout << "[2] add to the back\n";
-    cout << "Which one?: ";
-    cin >> choice;
 
     string continueChoiceInput = "y";
 
     while (continueChoiceInput == "y" || continueChoiceInput == "Y") {
+        cout << "[1] add to the front\n";
+        cout << "[2] add to the back\n";
+        cout << "Which one?: ";
+        cin >> choice;
+
+
         cout << "Enter rating (1 - 5): ";
         cin >> rating;
         cin.ignore();
 
-        if (choice == 1) {                  ///////////Change from an if
+        if (choice == 1) {                  /////////// Change from an if
             AddToFront(head, tail, rating, comment);
         }
         else if (choice == 2) {
@@ -121,6 +125,7 @@ int main() {
         cout << "Want to add another review? (y/n): ";
         cin >> continueChoiceInput;
         cin.ignore();
+        
 
     DisplayList(head);
     }
