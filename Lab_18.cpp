@@ -27,6 +27,20 @@ void AddToFront (ReviewNode*& head, ReviewNode*& tail, double rating, string com
     }
 };
 
+void DisplayList (ReviewNode* head) {
+    if (head == nullptr) {
+        cout << "Somin ain't right\n";
+        return;
+    }
+
+    int count = 0;
+    ReviewNode* current = head;
+
+    while (current != nullptr) {
+        count++
+    }
+}
+
 
 int main() {
 
@@ -36,18 +50,19 @@ int main() {
 
     // User choice
     int choice;
+    double rating;
+    string comment;
+
     cout << "[1] add to the front\n";
     cout << "[2] add to the back\n";
     cout << "Which one?: ";
     cin >> choice;
 
-    double rating;
-    string comment;
-    if (choice == 1) {
-        AddToFront(head, tail, rating, comment)
-
-    cout << "Enter rating (1 -5): ";
-    cin >> rating:
+     cout << "Enter rating (1 -5): ";
+    cin >> rating;
     cin.ignore();
+
+    if (choice == 1) {
+        AddToFront(head, tail, rating, comment);
     }
 }
